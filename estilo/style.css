@@ -1,0 +1,233 @@
+@charset "UTF-8";
+/* colors
+#62EAC6
+#1CE6B0
+#15B389
+#0C664E
+#2B6656
+#063D1E
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap');
+
+@font-face {
+    font-family: 'Idroid';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root {
+    --cor0: #62EAC6;
+    --cor1: #1CE6B0;
+    --cor2: #15B389;
+    --cor3: #0C664E;
+    --cor4: #2B6656;
+    --cor5: #063D1E;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --font-Idroid: 'Idroid', cursive;
+}
+
+/*
+asterisco é um seletor global
+*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor1);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after {
+    content: '\00A0\1F517';
+}
+
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor2), var(--cor4));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    margin-bottom: 20px;
+    font-weight: normal;
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.341);
+}
+
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    margin: auto;
+    max-width: 600px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+
+}
+
+nav {
+    background-color: var(--cor4);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.211);
+}
+
+nav > a {
+    color: var(--cor2);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+
+/*esse transition duration é o tempo que leva ao passar o mouse sobre o conteudo para fazer a transição*/
+
+nav > a:hover {
+    background-color: var(--cor2);
+    color: var(--cor4);
+}
+
+main {
+    background-color: white;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.429);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--font-Idroid);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h2 {
+    font-family: var(--font-Idroid);
+    color: var(--cor4);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor0), transparent);
+    text-indent: 5px;
+    border-radius: 2px;
+}
+
+main p {
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;
+    font-size: 1em;
+}
+
+/*main p sem o sinal > significa que um paragrafo pode estar dentro do main em qualquer nível. Neste caso, não foi inserido o > porque tem um article dentro do main. */
+
+main strong {
+    color: var(--cor5);
+    font-weight: bold;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor0);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pequena {
+    max-width: 300px;
+    display: block;
+    margin: auto;
+}
+
+/*quando não tem uma imagem pequena, podemos criar um classe no nosso código para a imagem e criar o 'style' dela, como feito acima. A imagem por padrão não é um bloco, por este motivo o margin no auto não funciona por si só, é necessário criar o display block.*/
+
+div.vídeo {
+    background-color: var(--cor4);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;
+
+    position: relative;
+}
+
+div.vídeo > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+
+}
+/*para tornar um vídeo responsivo com o código já pronto vindo do youtube, é necessário envelopar dentro de uma DIV e criar um classe ou um id no código, depois colocar position relative na div do video e position absolute na div do iframe.
+Com a position no absolute é possível mexer no top e left, além do width e height; colocando o valor em porcentagem*/
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.263);
+}
+
+aside > ul {
+    list-style-type: "\2714\00A0";
+    list-style-position: inside;
+    columns: 2;
+}
+
+/*list style type, esse código 2714 foi retirado do site emojipedia sem o "U+" na frente. Ao colar aqui, foi necessário colocar o contra barra "\" para aparecer o simbolo senão vai aparecer somente números.
+O 00A0 é o NBSP, que é o espaço que quebra.
+
+MAS LEMBRANDO QUE ESSE COMANDO LIST STYLE TYPE não é compativel com todos os navegadores, aparentemente só com o chrome*/
+
+aside > h3 {
+    background-color: var(--cor3);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+/*margin negativa ajudou a encaixar melhor no bloco de aside. Interessante usar!!*/
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
